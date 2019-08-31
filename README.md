@@ -10,6 +10,11 @@
   - Flask-Migrate
   - Flask-WTF
   - python-dotenv
+       - .env file 
+         ```
+            FLASK_ENV=development
+            FLASK_APP=manager.py
+         ```
   - flask-ckeditor 
   - flask_security
 
