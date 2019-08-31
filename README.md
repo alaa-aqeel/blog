@@ -14,7 +14,7 @@
   - flask_security
 
 ### Rune
-   - creaet .env file insade
+   - creaet .env file inside
         ```
            FLASK_ENV=development
            FLASK_APP=manager.py
