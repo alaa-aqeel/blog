@@ -10,15 +10,13 @@
   - Flask-Migrate
   - Flask-WTF
   - python-dotenv
-       - .env file 
-         ```
-            FLASK_ENV=development
-            FLASK_APP=manager.py
-         ```
   - flask-ckeditor 
   - flask_security
 
 ### Rune
+   - creaet .env file in
+        ```FLASK_ENV=development
+           FLASK_APP=manager.py```
   - `$ flask db init`
   - `$ flask db migrate`
   - `$ flask db upgrade`
