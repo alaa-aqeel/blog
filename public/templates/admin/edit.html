@@ -1,0 +1,35 @@
+{% extends 'admin/model/edit.html' %}
+
+
+
+
+{% set footer = False %}
+
+{% block header_blog %} 
+<header class="masthead" style=";background-image: url('{{ url_for('static',filename='img/login-bg.jpg')  }}')">
+	<div class="overlay"></div>
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-md-10 mx-auto">
+	      <div class="site-heading" style="padding: 10%">
+	        <h1>{{ current_user.fullname }}</h1>
+	        <span class="subheading">Welocme {{current_user.roles[0].name}} In Blog  Panel</span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</header>
+<div class="container">
+	<h2> Edit {{ admin_view.name }} </h2>
+	<hr>
+</div>
+{% endblock  %}
+
+
+{% block tail %}
+	{% if admin_view.load_ckeditor  %}
+	    {{ super() }}
+	    {{ ckeditor.load() }}
+	    {{ckeditor.config(name='post')}}
+	{% endif %}
+{% endblock %}

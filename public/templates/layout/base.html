@@ -1,0 +1,38 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/layout.html' as layout with context -%}
+{% import 'layout/menu.html' as menu with context -%}
+
+{% block head_tail %}
+  {{ super() }}
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href="{{ url_for('static', filename='css/clean-blog.min.css') }}" rel="stylesheet">
+  {%  block style %} {% endblock style %}
+{% endblock %}
+  
+
+{% block page_body %}
+   {% include "layout/header.html" %}
+   {% block header_blog %} {% endblock header_blog %}
+    <div class="container">  
+      {% block messages %}
+        {{ layout.messages() }}
+      {% endblock %}
+      {% set render_ctx = h.resolve_ctx() %}
+      {% block body %}{% endblock %}
+    </div>
+    {% block blog %} {% endblock blog %}
+    {% if footer != False  %}
+      {% include "layout/footer.html" %}
+    {% else %}
+      <br>
+      <br>
+    {% endif %}
+{% endblock %}
+
+{% block tail %}
+  {{ super() }}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+  {%  block js %} {% endblock js %}
+{% endblock %}

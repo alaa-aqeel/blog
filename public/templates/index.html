@@ -1,0 +1,68 @@
+{% extends 'admin/master.html' %}
+
+
+{% block header_blog %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/home-bg.jpg')  }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock %}
+
+{% block blog %}
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+        <!-- Post -->
+        {% for post in posts.items %}
+          <div class="post-preview">
+            <a href="/post/{{ post.id }}">
+              <h2 class="post-title">
+                {{ post.title }} 
+              </h2>
+              <h3 class="post-subtitle">
+                {{ post.subtitle }}
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">{{ post.user.fullname }}</a>
+              on {{post.create_at.date()}}</p>
+          </div>
+          <hr>
+         {% endfor %}
+        
+
+        <!-- Pager -->
+
+        <div class="clearfix">
+          {% if posts.has_prev %}
+            <a class="btn btn-link " href="{{ url_for('admin.home', page=posts.prev_num) }}">&larr; Newer posts </a>
+          {% endif %}
+
+          {% if posts.has_next %}
+            <a class="btn btn-link float-right" href="{{ url_for('admin.home', page=posts.next_num) }}">
+              Older Posts &rarr;
+            </a>
+          {% endif %} 
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}

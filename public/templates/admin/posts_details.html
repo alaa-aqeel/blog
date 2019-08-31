@@ -1,0 +1,21 @@
+{% extends 'admin/model/details.html' %}
+
+
+
+
+{% block details_table %}
+	<h1> Hello World</h1>
+	<table class="table table-hover table-bordered searchable">
+		{% for c, name in details_columns %}
+		  <tr>
+		    <td><b>{{ name }}</b></td>
+		    <td>{% if c == 'post' %} 
+		    		{{ get_value(model, c) | safe }} 
+		    	{% else %} 
+		    		{{ get_value(model, c)  }}
+		    	{% endif %}
+		   	</td>
+		  </tr>
+		{% endfor %}
+	</table>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'admin/master.html' %}
+
+
+{% block header_blog %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/about-bg.jpg')  }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me </h1>
+            <span class="subheading">This is what I do  <i class="fab  fa-angellist   "></i>.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block blog %}
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1 class="text-uppercase" >Alaa Akiel</h1>
+        <h6 class="text-uppercase" >
+          Iraq.wasit.kut ,
+          <a  href="mailto:alaa.21.iraq@gmail.com">
+           alaa.21.iraq@gmail.com
+          </a>
+        </h6>
+        <p>
+         I web developer with <b> <i class="fab  fa-python"></i> Python </b> using flask & django frameworks.
+
+        </p>
+        <p>
+          Here i write backend for this template 
+          <a href="https://startbootstrap.com/themes/clean-blog/" target="_blank">Clean Blog</a> 
+          with flask framework .library use flask-admin to make admin panel and flask-security 
+        </p>
+        <p>
+         <b> Blog </b>  <a href="github.com/blogflaskadmin"> github  </a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
