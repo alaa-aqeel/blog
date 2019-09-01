@@ -26,7 +26,7 @@
 {% endblock  %}
 
 
-{% block tail %}
+{% block js %}
 	{% if admin_view.load_ckeditor  %}
 	    {{ super() }}
 	    {{ ckeditor.load() }}

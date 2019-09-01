@@ -29,7 +29,6 @@ class User(db.Model,UserMixin):
 	roles     = db.relationship('Role' , secondary=roles_users,
 	                        backref=db.backref('user', lazy='dynamic'))
 	
-
 	def __str__(self): return str(self.fullname)
 
 	@hybrid_property

@@ -17,8 +17,8 @@ class CustomModelVIew(ModelView):
 
 	list_template    = 'admin/list.html'
 	edit_template    = 'admin/edit.html'
-	create_template    = 'admin/create.html'
-	details_template    = 'admin/details.html'
+	create_template  = 'admin/create.html'
+	details_template = 'admin/details.html'
 
 
 
@@ -30,8 +30,10 @@ class CustomModelVIew(ModelView):
 
 class UserModelView(CustomModelVIew): 
 	column_searchable_list = ('fullname',)
+	form_columns = ('roles','fullname','email','password','active')
+	column_list = ['id', 'fullname','email','roles','active', 'password']
 
-	column_exclude_list   = ['posts']
+	column_exclude_list   = ['posts','password']
 	form_excluded_columns = ['posts','create_at']
 
 class PostsModelView(CustomModelVIew):
