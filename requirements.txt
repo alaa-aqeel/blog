@@ -1,0 +1,9 @@
+Flask==1.0.2
+Flask-SQLAlchemy==2.4.0
+Flask-Migrate==2.4.0
+Flask-WTF==0.14.2
+python-dotenv==0.10.1
+git+https://github.com/AlaaProg/flask-admin.git
+Flask-Security-Too==3.0.2
+Flask-CKEditor==0.4.3
+Flask-Babel==0.12.2 
